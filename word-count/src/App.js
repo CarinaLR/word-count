@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import TextBlog from "./components/TextBlog";
 import Results from "./components/Results";
 import "./App.css";

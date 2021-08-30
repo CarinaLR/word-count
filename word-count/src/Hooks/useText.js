@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
 const useText = (text) => {
+  console.log("text", typeof text, text);
   let arrStr = text.split(" ");
   let wordsCount = arrStr.length;
   let charCount = 0;

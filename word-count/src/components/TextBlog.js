@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback } from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import useText from "../Hooks/useText";
 
@@ -10,7 +10,7 @@ const TextBlog = () => {
 
   //function to get input from form and store in state
   const handleTextSubmition = (e) => {
-    setText(e.search);
+    setText(e.text);
     //setPageNumber(1);
   };
 
@@ -20,16 +20,15 @@ const TextBlog = () => {
   };
 
   return (
-    <form>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <div className="container">
         <h2>Place your text in the Textarea and submit your request.</h2>
-        <div class="form-group">
-          <label for="exampleFormControlTextarea1">Example textarea</label>
+        <div className="form-group">
+          <label>Example textarea</label>
           <textarea
             type="text"
+            {...register("text")}
             className="form-control"
-            id="exampleFormControlTextarea1"
-            rows="3"
           ></textarea>
           <button className="btn bg-light" type="submit" value="submit">
             <i className="fas fa-search fa-sm">SUBMIT</i>

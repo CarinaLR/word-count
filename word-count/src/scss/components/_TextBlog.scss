@@ -5,4 +5,13 @@
 
 .texBoxSize {
   height: 40vh;
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 20px;
+}
+
+.submitButton {
+  padding: 10px;
+  background-color: $buttonSubmit;
+  border-color: black;
 }

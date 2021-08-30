@@ -32,7 +32,11 @@ const TextBlog = () => {
                   {...register("text")}
                   className="form-control texBoxSize"
                 ></textarea>
-                <button className="btn bg-light" type="submit" value="submit">
+                <button
+                  className="btn bg-light submitButton"
+                  type="submit"
+                  value="submit"
+                >
                   <i className="fas fa-search fa-sm">SUBMIT</i>
                 </button>
               </div>

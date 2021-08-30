@@ -6,12 +6,12 @@ const TextBlog = () => {
   const [text, setText] = useState(" ");
   const { register, handleSubmit } = useForm();
 
-  useText(text);
+  const { words, chars, charNoSpaces, sentence, paragraph } = useText(text);
+  console.log("get values", words, chars, charNoSpaces, sentence, paragraph);
 
   //function to get input from form and store in state
-  const handleTextSubmition = (e) => {
+  const handleTextSubmition = async (e) => {
     setText(e.text);
-    //setPageNumber(1);
   };
 
   //function to handle form submition

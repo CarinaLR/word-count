@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>WORD COUNT</h1>
+        <h1>WORD COUNTER</h1>
       </header>
       <TextBlog />
     </div>

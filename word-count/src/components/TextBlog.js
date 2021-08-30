@@ -22,13 +22,15 @@ const TextBlog = () => {
         <div className="col-12 col-sm-6 col-md-8">
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="container">
-              <h2>Place your text in the Textarea and submit your request.</h2>
+              <h2 className="textLabel">
+                Place your text in the Textarea and submit your request.
+              </h2>
               <div className="form-group">
-                <label>Example textarea</label>
+                <label>Submit once your text is ready to be sent.</label>
                 <textarea
                   type="text"
                   {...register("text")}
-                  className="form-control"
+                  className="form-control texBoxSize"
                 ></textarea>
                 <button className="btn bg-light" type="submit" value="submit">
                   <i className="fas fa-search fa-sm">SUBMIT</i>

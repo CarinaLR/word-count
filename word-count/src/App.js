@@ -1,4 +1,5 @@
 import TextBlog from "./components/TextBlog";
+import "./main.scss";
 import "./App.css";
 
 function App() {

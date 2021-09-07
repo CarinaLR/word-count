@@ -18,11 +18,20 @@ const useText = (text) => {
   }, [text]);
 
   let arrStr = text.split(" ");
-  let wordsCount = arrStr.length;
+  console.log("arrStr", arrStr);
+  let wordsCount = 0;
   let charCount = 0;
   let charExcludingSpacesCount = 0;
   let sentenceCount = 0;
   let paragraphCount = text.split(/\n/).length;
+
+  arrStr.forEach((c) => {
+    if (arrStr.length === 2 && c === " ") {
+      alert("please send a text");
+      wordsCount = 0;
+    }
+    if (arrStr.length > 2 && c !== " ") wordsCount = arrStr.length;
+  });
 
   for (let i = 0; i < text.length; i++) {
     let char = text[i];

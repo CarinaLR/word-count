@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# Words Counter
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Word Count Challenge.
+
+Create a `user-facing` form that counts the number of words in a block of text.
+
+Features:
+
+- A form containing a `text box to enter a body of text`. When submitting the form with some text, `displays the results` containing the number of words in the text box. When submitting the form with an empty text shows an error displaying that some text input is required.
+
+Built with `JavaScript`/ `ReactJS` / `Bootstrap4` / `Sass`.
+
+## Environment
+
+- `git clone` with this repo url to get the code in the local machine
+- `npm install` activates the environment and installs all dependencies used
+- `cd word-count` to switch to the correct module and start using the app
 
 ## Available Scripts
 
-In the project directory, you can run:
-
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# Getting Started with Create React App
 
-### `npm test`
+- `npx create-react-app my app` no need to install or configure webpack or Babel, npx is pre-bundled with npm.
+- `git init` initializes an empty repository.
+- `npm install bootstrap@4` framework for building responsive, mobile-first sites
+- `npm install node-sass` preprocessor that helps you write robust, maintainable CSS.
+- `localhost 3000` port that supports our frontend.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+# word-count -contains all the frontend modules, here we store all the client-side modules, needed to manipulate user interface and display it to the DOM.
+# src folder -the core of the frontend structure connects and renders our components.
+# Hooks folder -contains useText custom hook, need it to set state using in our components, in a modular reusing way.
+# components folder -contains TextBlog.js, and Results.js, which are our components used to render all the information on our client-side.
+# App.js -Wraps the TextBlog component, allowing it to render in the application.
+# src folder -contains ` assets` folder which contains all images using in the application and readme file.
 
-### `npm run build`
+React Hooks allows to break down the logic. Allows to reuse the component, and bringing in that logic to other components, providing stateless components which means, having a functional component.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Home Page.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![](/word-count/src/assets/word-count-homepg.png)

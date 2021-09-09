@@ -3,10 +3,8 @@ import useText from "../Hooks/useText";
 
 const Results = (props) => {
   const text = props.text;
-  console.log("text", text);
 
   const { words, chars, charNoSpaces, sentence, paragraph } = useText(text);
-  console.log("get values", words, chars, charNoSpaces, sentence, paragraph);
 
   return (
     <div>

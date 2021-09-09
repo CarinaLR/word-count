@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 
 const useText = (text) => {
-  console.log("text", text);
   const [words, setWords] = useState();
   const [chars, setChars] = useState();
   const [charNoSpaces, setCharNoSpaces] = useState();
@@ -18,12 +17,11 @@ const useText = (text) => {
   }, [text]);
 
   let arrStr = text.split(" ");
-  console.log("arrStr", arrStr);
   let wordsCount = 0;
   let charCount = 0;
   let charExcludingSpacesCount = 0;
   let sentenceCount = 0;
-  let paragraphCount = text.split(/\n/).length;
+  let paragraphCount = text.replace(/\n$/gm, "").split(/\n/).length;
 
   arrStr.forEach((c) => {
     if (arrStr.length === 2 && c === " ") {
@@ -35,23 +33,24 @@ const useText = (text) => {
 
   for (let i = 0; i < text.length; i++) {
     let char = text[i];
-    charCount++;
     if (char !== " ") charExcludingSpacesCount++;
     if (char === ".") sentenceCount++;
+    charCount++;
   }
-  console.log("wordsCount", wordsCount);
-  console.log("charCount", charCount);
-  console.log("charExcludingSpacesCount", charExcludingSpacesCount);
-  console.log("sentenceCount", sentenceCount);
-  console.log("paragraphCount", paragraphCount);
 
   useEffect(() => {
     setWords(wordsCount);
-    setChars(charCount);
-    setCharNoSpaces(charExcludingSpacesCount);
+    setChars(charCount - 1);
+    setCharNoSpaces(charExcludingSpacesCount - 1);
     setSentence(sentenceCount);
-    setParagraph(charExcludingSpacesCount);
-  }, [wordsCount, charCount, charExcludingSpacesCount, sentenceCount]);
+    setParagraph(paragraphCount);
+  }, [
+    wordsCount,
+    charCount,
+    charExcludingSpacesCount,
+    sentenceCount,
+    paragraphCount,
+  ]);
 
   return { words, chars, charNoSpaces, sentence, paragraph };
 };

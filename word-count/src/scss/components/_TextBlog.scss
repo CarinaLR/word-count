@@ -8,6 +8,7 @@
   display: flex;
   align-items: baseline;
   margin-bottom: 20px;
+  @include flex-center-hor-col;
 }
 
 .submitButton {

@@ -23,7 +23,7 @@ const useText = (text) => {
   let sentenceCount;
   let paragraphCount;
 
-  if (text === "") {
+  if (text === " ") {
     wordsCount = 0;
     charCount = 0;
     charExcludingSpacesCount = 0;
@@ -35,16 +35,18 @@ const useText = (text) => {
     charCount = 0;
     charExcludingSpacesCount = 0;
     sentenceCount = 0;
+    //paragraph counter
     paragraphCount = text.replace(/\n$/gm, "").split(/\n/).length;
-
+    //words and character counter
     arrStr.forEach((c) => {
+      if (arrStr.length === 1 && c !== " ") wordsCount = arrStr.length;
       if (arrStr.length === 2 && c === " ") {
-        alert("please send a text");
         wordsCount = 0;
+        charCount = 0;
       }
       if (arrStr.length > 2 && c !== " ") wordsCount = arrStr.length;
     });
-
+    //sentence and character excluding spaces counter
     for (let i = 0; i < text.length; i++) {
       let char = text[i];
       if (char !== " ") charExcludingSpacesCount++;
@@ -54,7 +56,7 @@ const useText = (text) => {
   }
   useEffect(() => {
     setWords(wordsCount);
-    setChars(charCount - 1);
+    setChars(charCount);
     setCharNoSpaces(charExcludingSpacesCount);
     setSentence(sentenceCount);
     setParagraph(paragraphCount);

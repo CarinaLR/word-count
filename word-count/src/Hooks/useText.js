@@ -16,32 +16,46 @@ const useText = (text) => {
     setParagraph([]);
   }, [text]);
 
-  let arrStr = text.split(" ");
-  let wordsCount = 0;
-  let charCount = 0;
-  let charExcludingSpacesCount = 0;
-  let sentenceCount = 0;
-  let paragraphCount = text.replace(/\n$/gm, "").split(/\n/).length;
+  let arrStr;
+  let wordsCount;
+  let charCount;
+  let charExcludingSpacesCount;
+  let sentenceCount;
+  let paragraphCount;
 
-  arrStr.forEach((c) => {
-    if (arrStr.length === 2 && c === " ") {
-      alert("please send a text");
-      wordsCount = 0;
+  if (text === "") {
+    wordsCount = 0;
+    charCount = 0;
+    charExcludingSpacesCount = 0;
+    sentenceCount = 0;
+    paragraphCount = 0;
+  } else {
+    arrStr = text.split(" ");
+    wordsCount = 0;
+    charCount = 0;
+    charExcludingSpacesCount = 0;
+    sentenceCount = 0;
+    paragraphCount = text.replace(/\n$/gm, "").split(/\n/).length;
+
+    arrStr.forEach((c) => {
+      if (arrStr.length === 2 && c === " ") {
+        alert("please send a text");
+        wordsCount = 0;
+      }
+      if (arrStr.length > 2 && c !== " ") wordsCount = arrStr.length;
+    });
+
+    for (let i = 0; i < text.length; i++) {
+      let char = text[i];
+      if (char !== " ") charExcludingSpacesCount++;
+      if (char === ".") sentenceCount++;
+      charCount++;
     }
-    if (arrStr.length > 2 && c !== " ") wordsCount = arrStr.length;
-  });
-
-  for (let i = 0; i < text.length; i++) {
-    let char = text[i];
-    if (char !== " ") charExcludingSpacesCount++;
-    if (char === ".") sentenceCount++;
-    charCount++;
   }
-
   useEffect(() => {
     setWords(wordsCount);
     setChars(charCount - 1);
-    setCharNoSpaces(charExcludingSpacesCount - 1);
+    setCharNoSpaces(charExcludingSpacesCount);
     setSentence(sentenceCount);
     setParagraph(paragraphCount);
   }, [

@@ -4,11 +4,14 @@ import Results from "./Results";
 
 const TextBlog = () => {
   const [text, setText] = useState(" ");
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  // const {
+  //   register,
+  //   handleSubmit,
+  //   formState: { errors },
+  // } = useForm();
+  const { register, handleSubmit, formState } = useForm({
+    mode: "onChange",
+  });
 
   //function to get input from form and store in state
   const handleTextSubmition = async (e) => {
@@ -36,17 +39,18 @@ const TextBlog = () => {
                   {...register("text", { required: true })}
                   className="form-control texBoxSize"
                 >
-                  {errors.name && errors.text.type === "required" && (
+                  {/* {errors.name && errors.text.type === "required" && (
                     <span role="alert">
                       Text input is required to submit your form
                     </span>
-                  )}
+                  )} */}
                 </textarea>
 
                 <button
                   className="btn bg-light submitButton"
                   type="submit"
                   value="submit"
+                  disabled={!formState.isValid}
                 >
                   <i className="fas fa-search fa-sm">SUBMIT</i>
                 </button>

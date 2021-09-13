@@ -4,11 +4,6 @@ import Results from "./Results";
 
 const TextBlog = () => {
   const [text, setText] = useState(" ");
-  // const {
-  //   register,
-  //   handleSubmit,
-  //   formState: { errors },
-  // } = useForm();
   const { register, handleSubmit, formState } = useForm({
     mode: "onChange",
   });
@@ -33,18 +28,17 @@ const TextBlog = () => {
                 Place your text in the Textarea and submit your request.
               </h2>
               <div className="form-group">
-                <label>Submit once your text is ready to be sent.</label>
+                <label>
+                  Submit button will become active once the text box is not
+                  empty.
+                </label>
                 <textarea
                   type="text"
-                  {...register("text", { required: true })}
+                  {...register("text", {
+                    required: "Text input is required to submit your form",
+                  })}
                   className="form-control texBoxSize"
-                >
-                  {/* {errors.name && errors.text.type === "required" && (
-                    <span role="alert">
-                      Text input is required to submit your form
-                    </span>
-                  )} */}
-                </textarea>
+                ></textarea>
 
                 <button
                   className="btn bg-light submitButton"

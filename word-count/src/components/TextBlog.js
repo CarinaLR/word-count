@@ -34,6 +34,7 @@ const TextBlog = () => {
                 </label>
                 <textarea
                   type="text"
+                  data-testid="required-input"
                   {...register("text", {
                     required: "Text input is required to submit your form",
                   })}

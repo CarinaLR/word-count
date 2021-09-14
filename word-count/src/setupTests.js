@@ -2,6 +2,4 @@
 // allows you to do things like:
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
-import getByTestId from "@testing-library/jest-dom";
-
-expect(getByTestId("required-input")).toBeRequired();
+import "@testing-library/jest-dom";

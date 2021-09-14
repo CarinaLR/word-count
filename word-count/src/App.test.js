@@ -16,4 +16,6 @@ it("renders without crashing", () => {
   ReactDOM.unmountComponentAtNode(div);
 });
 
-// expect(getByTestId("required-input")).toBeRequired();
+it("initial state is empty or with white-space", () => {
+  expect(getByTestId("required-input")).toBeRequired();
+});

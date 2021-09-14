@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, getByTestId } from "@testing-library/react";
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
@@ -15,3 +15,5 @@ it("renders without crashing", () => {
   ReactDOM.render(<App />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
+
+// expect(getByTestId("required-input")).toBeRequired();

@@ -1,9 +1,12 @@
-import "@testing-library/jest-dom";
-import useText from "./useText";
+import { render, getByTestId } from "@testing-library/jest-dom";
+import App from "./App";
 
-//To use test on Hooks, we need Enzyme and enzyme-adapter-react-16 depedecies.
-//The shallow method or rendering is used to test components as a unit. It is a simulated render of a component tree that does not require a DOM.
+//The useEffect Hook implementation is essentially setting the value of the words state to the localStorage.
+//Submitting a text via the input field changes the value of the words state.
+//The words state is saved in the localStorage.
 
-// test("verify typeof text", () => {
-//   expect(useText());
-// });
+it("App loads with initial state of text empty", () => {
+  const { container } = render(<App />);
+  const text = getByTestId(container, "required-input");
+  expect(text.textContent).toBe(" ");
+});

@@ -3,19 +3,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 
-// test('renders learn react link', () => {
-//   render(<App />);
-//   const linkElement = screen.getByText(/learn react/i);
-//   expect(linkElement).toBeInTheDocument();
-// });
-
 //test see if the app renders without crashing.
 it("renders without crashing", () => {
   const div = document.createElement("div");
   ReactDOM.render(<App />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
-
+//test to require user input not empty.
 it("initial state is empty or with white-space", () => {
   expect(getByTestId("required-input")).toBeRequired();
 });

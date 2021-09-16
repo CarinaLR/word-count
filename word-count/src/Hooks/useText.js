@@ -40,7 +40,6 @@ const useText = (text) => {
     paragraphCount = text.replace(/\n$/gm, "").split(/\n/).length;
     //words and character counter
     arrStr.forEach((c) => {
-      console.log("c", c, arrStr.length);
       if (arrStr.length === 1 && c !== " ") wordsCount = arrStr.length;
       if (arrStr.length === 2 && c === " ") {
         wordsCount = 0;

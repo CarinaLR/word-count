@@ -15,6 +15,10 @@ const TextBlog = () => {
 
   //function to handle the form submission
   const onSubmit = (e) => {
+    // an alert will trigger if an empty text has been sent.
+    if (text === " ") {
+      alert("Please enter your text before submitted");
+    }
     handleTextSubmition(e);
   };
 

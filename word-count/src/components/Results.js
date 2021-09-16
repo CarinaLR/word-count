@@ -3,7 +3,7 @@ import useText from "../Hooks/useText";
 
 const Results = (props) => {
   const text = props.text;
-
+  //state in our functional component, with React hooks.
   const { words, chars, charNoSpaces, sentence, paragraph } = useText(text);
 
   return (

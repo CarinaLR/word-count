@@ -8,7 +8,7 @@ const TextBlog = () => {
     mode: "onChange",
   });
 
-  //function to get input from form and store in state
+  //function to get input from the form and store it in the state
   const handleTextSubmition = async (e) => {
     setText(e.text);
   };

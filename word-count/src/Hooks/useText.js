@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+//custom hooks allow to break down and establish the logic them in a reusable way.
 const useText = (text) => {
   const [words, setWords] = useState();
   const [chars, setChars] = useState();
@@ -35,6 +35,7 @@ const useText = (text) => {
     charCount = 0;
     charExcludingSpacesCount = 0;
     sentenceCount = 0;
+
     //paragraph counter
     paragraphCount = text.replace(/\n$/gm, "").split(/\n/).length;
     //words and character counter
@@ -54,6 +55,7 @@ const useText = (text) => {
       charCount++;
     }
   }
+  //setting data with React hooks
   useEffect(() => {
     setWords(wordsCount);
     setChars(charCount);

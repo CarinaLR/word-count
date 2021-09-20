@@ -35,6 +35,8 @@ const useText = (text) => {
     // uses a Regular Expression to remove the Non-ASCII characters from the string. .replace() method to replace the Non-ASCII characters with the empty string.
     // eslint-disable-next-line no-control-regex
     str = str.replace(/[^\x00-\x7F]/g, "");
+    //it specifies the Unicode for the characters to remove. The range of characters between (0080 – FFFF) are removed.
+    //str = str.replace(/[\u{0080}-\u{FFFF}]/gu, "");
     arrStr = str.split(" ");
     wordsCount = 0;
     charCount = 0;

@@ -5,8 +5,8 @@ import App from "./App";
 //Submitting a text via the input field changes the value of the text state.
 //The text state is saved in the localStorage.
 
-it("App loads with initial state of text empty", () => {
+it("App receives a string input as text from the user.", () => {
   const { container } = render(<App />);
   const text = getByTestId(container, "required-input");
-  expect(text.textContent).toBe(" ");
+  expect(text.textContent).toBe("");
 });

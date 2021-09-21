@@ -9,7 +9,3 @@ it("renders without crashing", () => {
   ReactDOM.render(<App />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
-//test to require user input not empty.
-it("initial state is empty or with white-space", () => {
-  expect(getByTestId("required-input")).toBeRequired();
-});

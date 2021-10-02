@@ -43,6 +43,7 @@ const TextBlog = () => {
                     required: "Text input is required to submit your form",
                   })}
                   className="form-control texBoxSize"
+                  required
                 ></textarea>
 
                 <button

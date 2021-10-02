@@ -9,7 +9,7 @@ import TextBlog from "../components/TextBlog";
 it("initial state is empty or with white-space", () => {
   const { container } = render(<TextBlog />);
   const userInput = getByTestId(container, "required-input");
-  expect(userInput.textContent).toBeRequired();
+  expect(userInput).toBeRequired();
 });
 
 //test to require a string input.

@@ -58,7 +58,7 @@ const useText = (text) => {
     for (let i = 0; i < text.length; i++) {
       let char = text[i];
       if (char !== " ") charExcludingSpacesCount++;
-      if (char === ".") sentenceCount++;
+      if (char === "." || char === "?") sentenceCount++;
       charCount++;
     }
   }

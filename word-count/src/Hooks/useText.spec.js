@@ -1,4 +1,4 @@
-import { render, getByTestId } from "testing-library/react";
+import { render, getByTestId } from "@testing-library/react";
 import TextBlog from "../components/TextBlog";
 
 //The useEffect Hook implementation is essentially setting the value of the text state to the localStorage.
@@ -7,12 +7,14 @@ import TextBlog from "../components/TextBlog";
 
 //test to require user input not empty.
 it("initial state is empty or with white-space", () => {
-  expect(getByTestId("required-input")).toBeRequired();
+  const { container } = render(<TextBlog />);
+  const userInput = getByTestId(container, "required-input");
+  expect(userInput.textContent).toBeRequired();
 });
 
 //test to require a string input.
 it("App receives a string input as text from the user.", () => {
   const { container } = render(<TextBlog />);
   const text = getByTestId(container, "required-input");
-  expect(text.textContent).toBe("");
+  expect(text.textContent).toBe(typeof "");
 });

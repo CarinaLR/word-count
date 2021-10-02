@@ -16,5 +16,5 @@ it("initial state is empty or with white-space", () => {
 it("App receives a string input as text from the user.", () => {
   const { container } = render(<TextBlog />);
   const text = getByTestId(container, "required-input");
-  expect(text.textContent).toBe(typeof "");
+  expect(text.textContent).toBe("");
 });

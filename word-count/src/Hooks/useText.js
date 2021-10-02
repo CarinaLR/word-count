@@ -7,7 +7,6 @@ const useText = (text) => {
   const [charNoSpaces, setCharNoSpaces] = useState();
   const [sentence, setSentence] = useState();
   const [paragraph, setParagraph] = useState();
-
   //prevent event to append new
   useEffect(() => {
     setWords([]);

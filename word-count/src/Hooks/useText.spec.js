@@ -18,3 +18,5 @@ it("App receives a string input as text from the user.", () => {
   const text = getByTestId(container, "required-input");
   expect(text.textContent).toBe("");
 });
+
+//Add deploy to aws amplify
